@@ -1,0 +1,14 @@
+version: '3'
+services:
+  gateway:
+    build:
+      context: ./
+      dockerfile: nginx.dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - apigateway
+networks:
+  apigateway:
+    driver: bridge
